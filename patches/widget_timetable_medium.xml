@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/widget_root" android:background="@drawable/bg_widget_rounded" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/empty_content" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="@color/widget_text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name" />
+        <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/widget_timetable_empty_title" />
+        <TextView android:textSize="11.0sp" android:textColor="@color/widget_text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/widget_timetable_empty_hint" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/today_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="13.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:ellipsize="end" android:id="@id/weekday_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+                <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_secondary" android:id="@id/today_date" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView android:textSize="11.0sp" android:textColor="@color/widget_text_secondary" android:id="@id/week_badge" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_secondary" android:ellipsize="end" android:id="@id/term_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:maxLines="1" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/widget_text_secondary" android:layout_gravity="center" android:id="@id/no_class_today" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/widget_timetable_no_class_today" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/course_list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.1" android:layout_marginEnd="6.0dip">
+                <TextClock android:textSize="34.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:format24Hour="HH:mm" android:format12Hour="h:mm" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/course_row_1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+                    <TextView android:id="@id/course_bar_1" android:layout_width="4.0dip" android:layout_height="fill_parent" android:layout_marginEnd="8.0dip" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:ellipsize="end" android:id="@id/course_title_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <Chronometer android:textSize="12.0sp" android:textStyle="bold" android:textColor="@color/widget_text_secondary" android:ellipsize="end" android:id="@id/course_period_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_tertiary" android:ellipsize="end" android:id="@id/course_place_1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:textSize="10.0sp" android:textColor="@color/widget_text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:text="接下来的课程" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/course_row_2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <TextView android:id="@id/course_bar_2" android:layout_width="3.0dip" android:layout_height="fill_parent" android:layout_marginEnd="6.0dip" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:ellipsize="end" android:id="@id/course_title_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_secondary" android:ellipsize="end" android:id="@id/course_period_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_tertiary" android:ellipsize="end" android:id="@id/course_place_2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/course_row_3" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <TextView android:id="@id/course_bar_3" android:layout_width="3.0dip" android:layout_height="fill_parent" android:layout_marginEnd="6.0dip" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:ellipsize="end" android:id="@id/course_title_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_secondary" android:ellipsize="end" android:id="@id/course_period_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_tertiary" android:ellipsize="end" android:id="@id/course_place_3" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/course_row_4" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <TextView android:id="@id/course_bar_4" android:layout_width="3.0dip" android:layout_height="fill_parent" android:layout_marginEnd="6.0dip" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:ellipsize="end" android:id="@id/course_title_4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_secondary" android:ellipsize="end" android:id="@id/course_period_4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_tertiary" android:ellipsize="end" android:id="@id/course_place_4" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/course_row_5" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <TextView android:id="@id/course_bar_5" android:layout_width="3.0dip" android:layout_height="fill_parent" android:layout_marginEnd="6.0dip" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:ellipsize="end" android:id="@id/course_title_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_secondary" android:ellipsize="end" android:id="@id/course_period_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_tertiary" android:ellipsize="end" android:id="@id/course_place_5" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/course_row_6" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <TextView android:id="@id/course_bar_6" android:layout_width="3.0dip" android:layout_height="fill_parent" android:layout_marginEnd="6.0dip" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="@color/widget_text_primary" android:ellipsize="end" android:id="@id/course_title_6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_secondary" android:ellipsize="end" android:id="@id/course_period_6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_tertiary" android:ellipsize="end" android:id="@id/course_place_6" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_secondary" android:id="@id/more_courses" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="9.0sp" android:textColor="@color/widget_text_tertiary" android:ellipsize="end" android:id="@id/footer_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+    </LinearLayout>
+</LinearLayout>
