@@ -160,16 +160,6 @@
 
     if-ltz v8, :cond_6
 
-    const-wide/32 v10, 0xea60
-
-    add-long/2addr v6, v10
-
-    cmp-long v8, v4, v6
-
-    if-lez v8, :cond_2
-
-    goto/16 :goto_1
-
     :cond_2
     const-string/jumbo v6, "\u8bfe\u7a0b\u5373\u5c06\u5f00\u59cb"
 
@@ -277,10 +267,49 @@
 
     invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
 
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
+
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setOnlyAlertOnce(Z)Landroid/app/Notification$Builder;
+
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setShowWhen(Z)Landroid/app/Notification$Builder;
+
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setUsesChronometer(Z)Landroid/app/Notification$Builder;
+
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setChronometerCountDown(Z)Landroid/app/Notification$Builder;
+
+    invoke-virtual {v12, v2, v3}, Landroid/app/Notification$Builder;->setWhen(J)Landroid/app/Notification$Builder;
+
+    sub-long v8, v2, v4
+
+    invoke-virtual {v12, v8, v9}, Landroid/app/Notification$Builder;->setTimeoutAfter(J)Landroid/app/Notification$Builder;
+
+    const-string/jumbo v0, "\u8bfe\u7a0b\u5012\u8ba1\u65f6"
+
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setSubText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+
     const-string v0, "alarm"
 
     invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setCategory(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
+    const/4 v0, 0x1
+
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setVisibility(I)Landroid/app/Notification$Builder;
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x24
+
+    if-lt v0, v1, :cond_after_promoted
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setRequestPromotedOngoing(Z)Landroid/app/Notification$Builder;
+
+    const-string/jumbo v0, "\u5373\u5c06\u4e0a\u8bfe"
+
+    invoke-virtual {v12, v0}, Landroid/app/Notification$Builder;->setShortCriticalText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+
+    :cond_after_promoted
     invoke-virtual {v12}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
     move-result-object v13

@@ -1691,6 +1691,18 @@
 
     if-nez v1, :cond_0
 
+    const/4 v1, 0x0
+
+    :try_start_fallback
+    invoke-virtual {v0, v1, p1, p2, p3}, Landroid/app/AlarmManager;->setAndAllowWhileIdle(IJLandroid/app/PendingIntent;)V
+    :try_end_fallback
+    .catch Ljava/lang/Exception; {:try_start_fallback .. :try_end_fallback} :catch_fallback
+
+    goto :goto_0
+
+    :catch_fallback
+    move-exception v1
+
     invoke-static {p0}, Lcom/szpu/nativeapp/widget/WidgetCountdownHelper;->cancelReminderAlarm(Landroid/content/Context;)V
 
     goto :goto_0
@@ -1707,6 +1719,18 @@
 
     :catch_0
     move-exception v2
+
+    const/4 v1, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v1, p1, p2, p3}, Landroid/app/AlarmManager;->setAndAllowWhileIdle(IJLandroid/app/PendingIntent;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v1
 
     invoke-static {p0}, Lcom/szpu/nativeapp/widget/WidgetCountdownHelper;->cancelReminderAlarm(Landroid/content/Context;)V
 
